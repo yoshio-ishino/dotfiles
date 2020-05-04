@@ -36,7 +36,7 @@ _setup_windows_terminal_conf() {
 }
 
 _setup_wsl_conf() {
-  sudo \c -f $HOME/dotfiles/etc/wsl.conf /etc/wsl.conf
+  sudo \cp -f $HOME/dotfiles/etc/wsl.conf /etc/wsl.conf
   func_msg success wsl.conf
 }
 
