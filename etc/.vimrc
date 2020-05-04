@@ -143,3 +143,7 @@ set expandtab     " insert spaces when hitting TABs
 set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround    " round indent to multiple of 'shiftwidth'
 set autoindent    " align the new line indent with the previous line
+
+" PrevimOpen
+let g:previm_open_cmd = '/c/Program\ Files\ \(x86\)/BraveSoftware/Brave-Browser/Application/brave.exe'
+let g:previm_wsl_mode = 1
