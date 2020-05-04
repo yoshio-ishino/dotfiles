@@ -1,0 +1,44 @@
+#!/bin/bash
+
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+export PATH="$HOME/.pyenv/shims:$PATH"
+export EDITOR=nvim
+export PYTHONDONTWRITEBYTECODE=1
+which pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
+
+[ -e $HOME/.local/bin/powerline-shell -a "$TERM" != "linux" ] &&
+PROMPT_COMMAND="PS1='$(~/.local/bin/powerline-shell $?)'; $PROMPT_COMMAND"
+
+
+env_microsoft_only() {
+  export DOCKER_HOST=tcp://localhost:2375
+
+  case "$TERM" in
+  xterm-color|*-256color) color_prompt=yes;;
+  esac
+
+  if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >/dev/null 2>&1; then
+        color_prompt=yes
+    else
+        color_prompt=
+    fi
+  fi
+
+  if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+  fi
+  unset color_prompt force_color_prompt
+
+  # If this is an xterm set the title to user@host:dir
+  case "$TERM" in
+  xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+  *)
+    ;;
+  esac
+}

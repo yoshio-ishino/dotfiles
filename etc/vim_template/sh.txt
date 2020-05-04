@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+usage() {
+cat <<_EOT_
+Usage:
+  memo [-b] [-h] [-r argument]...
+
+Description:
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Options:
+  -b    backup		start backup MKdocs
+  -h    help		display this help and exit
+  -r    restore		restore backed-up data
+
+_EOT_
+exit 0
+}

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+open() {
+  which explorer.exe &>/dev/null && explorer.exe $1
+}

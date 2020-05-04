@@ -1,0 +1,68 @@
+#!/bin/bash
+
+_usage(){
+cat <<EOF
+Usage:
+    ${cmd_name:-$1} [options]
+
+Description:
+    ${description:-$2}
+
+EOF
+}
+
+
+memo() {
+  case $1 in
+  search )
+    cd $HOME/work/memo/docs
+    file=$(find . -name '*.md' | xargs egrep '.' | peco --on-cancel=error) &&
+    [ $? != '1' ] && vi $(echo $file | tr ':' ' ' | awk '{print $1}') ;;
+  task )
+    vi $HOME/work/memo/docs/task.md ;;
+  * )
+    _usage memo "This is simple memo tool version 1.0"
+    echo "Options:"
+    echo "  search:  Full text search for memo."
+    echo "  task:    Open memo of task."
+    return 1 ;;
+  esac
+}
+
+pydev() {
+  DEV_HOME=$HOME/work
+
+  _create_yml() {
+cat <<EOF >docker-compose.yml
+version: '3'
+services:
+  $PROJECT_NAME:
+    image: python:3
+    container_name: $PROJECT_NAME
+    working_dir: /root
+    tty: true
+    volumes:
+      - ./:/root
+EOF
+  }
+
+  _init_env() {
+    touch requirements.txt README.md
+    echo '*_history' > .gitignore
+    echo '.cache' >> .gitignore
+    _create_yml
+    git flow init
+    docker-compose up -d && docker-compose exec $PROJECT_NAME /bin/bash
+  }
+
+  case $1 in
+  'init' )
+    read -p 'Input project name: ' PROJECT_NAME
+    mkdir $DEV_HOME/$PROJECT_NAME && cd $_ && _init_env ;;
+  * )
+    _usage 'pydev' 'This is python develop env managemanet tool.'
+    echo 'Options:'
+    echo '    init:  initialize develop env.'
+    return 1 ;;
+  esac
+}

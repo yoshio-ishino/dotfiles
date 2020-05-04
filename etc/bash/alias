@@ -1,0 +1,34 @@
+#!/bin/bash
+
+alias ll="ls -G -la"
+alias ls="ls -G"
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias vi='nvim'
+alias vim='nvim'
+
+alias_ubuntu_only() {
+  alias open='xdg-open'
+  alias google='open https://google.com'
+  if [ -x /usr/bin/dircolors ]; then
+     eval "$(dircolors -b)"
+     alias ls='ls --color=auto'
+     alias dir='dir --color=auto'
+     alias vdir='vdir --color=auto'
+     alias grep='grep --color=auto'
+     alias fgrep='fgrep --color=auto'
+     alias egrep='egrep --color=auto'
+     alias pbcopy='xsel -bi'
+  fi
+}
+
+alias_microsoft_only(){
+  if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+  fi
+}

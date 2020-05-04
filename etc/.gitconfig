@@ -1,0 +1,21 @@
+[user]
+    name = yoshio.ishino
+    email = yoshio.ishino@jscom.co.jp
+
+[merge]
+    tool = vimdiff
+	ff = false
+
+[diff]
+    tool = vimdiff
+
+[core]
+    editor = vim
+[alias]
+    loga  =  log --graph --oneline --branches
+    dc = diff --cached
+    bc = branch -a
+[http]
+    sslVerify = false
+[pull]
+	ff = only
