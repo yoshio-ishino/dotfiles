@@ -1,4 +1,4 @@
-. $HOME/dotfiles/lib/cmd/common
+. $HOME/dotfiles/etc/bash/common_cmd
 . $HOME/dotfiles/etc/bash/env
 . $HOME/dotfiles/etc/bash/alias
 
@@ -8,7 +8,7 @@ for os in $OS;do uname -r | grep $os >/dev/null && OS="$os";done
 
 case $OS in
 'Microsoft')
-  . $HOME/dotfiles/lib/cmd/microsoft
+  . $HOME/dotfiles/etc/bash/microsoft_cmd
   env_microsoft_only
   alias_microsoft_only
   ;;
