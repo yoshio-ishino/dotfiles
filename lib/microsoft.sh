@@ -40,10 +40,16 @@ _setup_wsl_conf() {
   func_msg success wsl.conf
 }
 
+_setup_sendto_conf() {
+  sudo \cp -f $HOME/dotfiles/etc/unc_path_converter.vbs $ROOT_PATH/AppData/Roaming/Microsoft/Windows/SendTo
+  func_msg success unc_path_converter.vbs
+}
+
 main() {
   [ ! -d $HOME_DIR ] && _create_home || _create_symlinks
   func_dotfiles
   _setup_windows_terminal_conf
   _setup_wsl_conf
+  _setup_sendto_conf
   func_install
 }
