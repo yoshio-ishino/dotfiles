@@ -7,10 +7,6 @@ export EDITOR=nvim
 export PYTHONDONTWRITEBYTECODE=1
 which pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
 
-[ -e $HOME/.local/bin/powerline-shell -a "$TERM" != "linux" ] &&
-PROMPT_COMMAND="PS1='$(~/.local/bin/powerline-shell $?)'; $PROMPT_COMMAND"
-
-
 env_microsoft_only() {
   export DOCKER_HOST=tcp://localhost:2375
 

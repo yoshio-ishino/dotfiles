@@ -48,3 +48,14 @@ call NERDTreeHighlightFile('html',   'yellow',  'none', 'yellow',  '#151515')
 call NERDTreeHighlightFile('styl',   'cyan',    'none', 'cyan',    '#151515')
 call NERDTreeHighlightFile('css',    'cyan',    'none', 'cyan',    '#151515')
 call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500', '#151515')
+
+
+nnoremap <silent> <C-b> :vs term://bash<CR>
+nnoremap <silent> <C-n> :call Setnumber()<CR>
+nnoremap <silent> <C-p> :call Pastemode()<CR>
+nnoremap j gj
+nnoremap k gk
+nnoremap <silent> <C-f> :call NERDTree()<CR>
+tnoremap <silent> <ESC> <C-\><C-n>
+
+nmap <Esc><Esc> :nohlsearch<CR>

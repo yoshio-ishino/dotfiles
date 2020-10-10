@@ -31,7 +31,7 @@ _create_symlinks() {
 
 _setup_windows_terminal_conf() {
   W_PATH=$ROOT_PATH/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
-  [ -e $W_PATH ] && ln -nf $HOME/dotfiles/etc/windows_terminal/profiles.json $W_PATH
+  [ -e $W_PATH ] && ln -nf $HOME/dotfiles/etc/windows_terminal/settings.json $W_PATH
   func_msg success profiles.json
 }
 

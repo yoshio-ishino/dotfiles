@@ -7,6 +7,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias vi='nvim'
 alias vim='nvim'
+alias gs='git status'
+alias gb='git branch'
+alias gl='git loga'
 
 alias_ubuntu_only() {
   alias open='xdg-open'

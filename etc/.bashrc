@@ -3,11 +3,11 @@
 . $HOME/dotfiles/etc/bash/alias
 
 
-OS='Microsoft Ubuntu Darwin'
+OS='Microsoft microsoft Ubuntu Darwin'
 for os in $OS;do uname -r | grep $os >/dev/null && OS="$os";done
 
 case $OS in
-'Microsoft')
+'Microsoft'|'microsoft')
   . $HOME/dotfiles/etc/bash/microsoft_cmd
   env_microsoft_only
   alias_microsoft_only
