@@ -1,3 +1,5 @@
+' https://qiita.com/kurapooh/items/03c4a989208b6bc4f84f
+
 Option Explicit
 
 Dim Arguments()   ' 引数 ファイル名が入る

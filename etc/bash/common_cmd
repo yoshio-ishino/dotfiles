@@ -37,7 +37,7 @@ cat <<EOF >docker-compose.yml
 version: '3'
 services:
   $PROJECT_NAME:
-    image: python:3
+    image: python:3.9.1
     container_name: $PROJECT_NAME
     working_dir: /root
     tty: true

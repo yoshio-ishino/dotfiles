@@ -3,7 +3,7 @@
 usage() {
 cat <<_EOT_
 Usage:
-  memo [-b] [-h] [-r argument]...
+  $(basename ${0}) [-b] [-h] [-r argument]...
 
 Description:
   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -16,3 +16,8 @@ Options:
 _EOT_
 exit 0
 }
+
+
+case ${1} in
+    *) usage ;;
+esac
