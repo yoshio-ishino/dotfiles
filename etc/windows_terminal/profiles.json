@@ -5,7 +5,14 @@
     "launchMode": "maximized",
     "profiles": 
     {
-        "defaults": {},
+        "defaults": 
+        {
+            "font": 
+            {
+                "size": 7,
+                "weight": "light"
+            }
+        },
         "list": 
         [
             {
@@ -16,12 +23,14 @@
                 "name": "cmd"
             },
             {
+                "bellStyle": "none",
                 "colorScheme": "One Half Dark",
                 "commandline": "wsl.exe -d Ubuntu-20.04",
                 "experimental.retroTerminalEffect": false,
                 "font": 
                 {
-                    "size": 10,
+                    "face": "HackGenNerd Console",
+                    "size": 8,
                     "weight": "light"
                 },
                 "guid": "{b9bd30ae-9d9b-464d-9c2e-95c6d839ffbe}",
@@ -240,5 +249,6 @@
             "white": "#C0C0C0",
             "yellow": "#808000"
         }
-    ]
+    ],
+    "startOnUserLogin": true
 }
