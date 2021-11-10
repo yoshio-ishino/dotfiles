@@ -7,6 +7,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias vi='nvim'
 alias vim='nvim'
+alias gs='git status'
+alias gb='git branch'
+alias gl='git loga'
 
 alias_ubuntu_only() {
   alias open='xdg-open'
@@ -26,6 +29,7 @@ alias_ubuntu_only() {
 alias_microsoft_only(){
   if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias clip='clip.exe'
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
