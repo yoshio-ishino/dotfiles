@@ -30,7 +30,7 @@ endif
 
 " If cannot load plugins, run command below.
 " :call dein#recache_runtimepath()
-"
+
 function! Airline()
   set laststatus=2
   let g:airline#extensions#tabline#buffer_idx_mode = 1
