@@ -19,6 +19,10 @@ func_dotfiles() {
     func_msg success $f
   done
   printf '\n'
+
+  func_msg title '[INFO]: Setup other config files.'
+  cp -r $HOME/dotfiles/etc/vim/colors $HOME/.config/nvim
+	func_msg success "$(ls $HOME/.config/nvim/colors)"
 }
 
 func_install() {
