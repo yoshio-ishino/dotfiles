@@ -20,7 +20,7 @@ function! PrevimOpen(browser)
   let g:previm_open_cmd = a:browser
   let g:previm_wsl_mode = 1
 endfunction
-call PrevimOpen('/c/Program\ Files\ \(x86\)/BraveSoftware/Brave-Browser/Application/brave.exe')
+call PrevimOpen('/c/Program\ Files\/BraveSoftware/Brave-Browser/Application/brave.exe')
 
 
 function! NERDTree()
