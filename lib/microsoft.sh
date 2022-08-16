@@ -42,8 +42,8 @@ _setup_wsl_conf() {
 
 main() {
   #[ ! -d $HOME_DIR ] && _create_home || _create_symlinks
+  func_install
   func_dotfiles
   #_setup_windows_terminal_conf
   #_setup_wsl_conf
-  func_install
 }

@@ -1,3 +1,20 @@
+function! Airline()
+  set laststatus=2
+  let g:airline#extensions#tabline#buffer_idx_mode = 1
+  let g:airline_theme='angr'
+  let g:airline_powerline_fonts = 1
+endfunction
+call Airline()
+
+
+function! ColorScheme()
+  autocmd ColorScheme * highlight Normal ctermbg=none
+  autocmd ColorScheme * highlight LineNr ctermbg=none
+  syntax on
+  colorscheme Tomorrow-Night-Eighties
+  set t_Co=256
+endfunction
+call ColorScheme()
 function! Setnumber()
   if &number
     setlocal nonumber
