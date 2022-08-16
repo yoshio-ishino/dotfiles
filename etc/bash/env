@@ -12,7 +12,7 @@ PROMPT_COMMAND="PS1='$(~/.local/bin/powerline-shell $?)'; $PROMPT_COMMAND"
 
 
 env_microsoft_only() {
-  export DOCKER_HOST=tcp://localhost:2375
+#  export DOCKER_HOST=tcp://localhost:2375
 
   case "$TERM" in
   xterm-color|*-256color) color_prompt=yes;;
