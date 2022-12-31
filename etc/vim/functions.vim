@@ -12,6 +12,7 @@ function! ColorScheme()
   autocmd ColorScheme * highlight LineNr ctermbg=none
   syntax on
   colorscheme Tomorrow-Night-Eighties
+  "colorscheme onehalfdark
   set t_Co=256
 endfunction
 call ColorScheme()

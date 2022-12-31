@@ -5,6 +5,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive' "git
 Plug 'airblade/vim-gitgutter' "gitdiff
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
-

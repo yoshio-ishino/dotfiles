@@ -20,8 +20,12 @@ set noswapfile "スワップファイルを作らない
 set autoread "編集中のファイルが変更されたら自動で読み直す
 set hidden "バッファが編集中でもその他のファイルを開けるように
 
+
 let g:python_host_prog = expand('python')
 let g:python3_host_prog = expand('~/.pyenv/shims/python3')
+
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
 
 autocmd BufNewFile *.md 0r $HOME/dotfiles/etc/vim/template/md.txt
 autocmd BufNewFile *.sh 0r $HOME/dotfiles/etc/vim/template/sh.txt
