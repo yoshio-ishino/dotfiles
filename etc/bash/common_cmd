@@ -29,6 +29,7 @@ memo() {
   esac
 }
 
+
 pydev() {
   DEV_HOME=$HOME/work
 
@@ -63,6 +64,27 @@ EOF
     _usage 'pydev' 'This is python develop env managemanet tool.'
     echo 'Options:'
     echo '    init:  initialize develop env.'
+    return 1 ;;
+  esac
+}
+
+
+work() {
+  WORKING_DIR=$2
+
+  case $1 in
+  'at' )
+    [ -d "${WORKING_DIR}" ] &&
+    tmux new-session -c $WORKING_DIR \; \
+        split-window -v -p 20 -c $WORKING_DIR \; \
+        split-window -h -c $WORKING_DIR \; \
+        clock-mode \; \
+        select-pane -D ||
+    echo Oops, the "${WORKING_DIR}" is not exists. Check the correct directory path.;;
+  * )
+    _usage 'work' 'This is initialize working terminal tool.'
+    echo 'Options:'
+    echo '    at <PATH_TO_THE_WORKING_DIR>:  initialize working terminal.'
     return 1 ;;
   esac
 }

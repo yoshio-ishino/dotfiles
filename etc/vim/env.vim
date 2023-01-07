@@ -20,6 +20,8 @@ set noswapfile "スワップファイルを作らない
 set autoread "編集中のファイルが変更されたら自動で読み直す
 set hidden "バッファが編集中でもその他のファイルを開けるように
 
+set fillchars+=vert:\|
+
 
 let g:python_host_prog = expand('python')
 let g:python3_host_prog = expand('~/.pyenv/shims/python3')
